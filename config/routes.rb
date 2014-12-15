@@ -1,5 +1,8 @@
 AppMarcadorPonto::Application.routes.draw do
-  get "welcome/index"
+
+  resources :cidades
+  
+  root to:"welcome#index"
 
   resources :contatos
 

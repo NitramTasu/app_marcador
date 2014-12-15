@@ -1,0 +1,32 @@
+
+<div class="panel panel-primary">
+<div class="panel-heading">Cidades</div>
+  <!-- Default panel contents -->
+  
+  <!-- Table -->
+  <table class="table">
+	<tr>
+		<th>Nome</th>
+		<th>Uf</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @cidades.each do |cidade| %>
+	<tr>
+		<td><%= cidade.nome %></td>
+		<td><%= cidade.uf %></td>	
+		<div class="btn-group" role="group">
+			<td><%= link_to "Show", cidade, :class => "btn btn-default" %></td>
+			<td><%= link_to "Edit", edit_cidade_path(cidade), :class => "btn btn-default" %></td>
+			<td><%= link_to 'Destroy', cidade, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
+		</div>
+	</tr>
+	<% end %>
+  </table>
+</div>
+
+<br />
+
+<%= link_to 'New Cidade', new_cidade_path, :class => "btn btn-default" %>
